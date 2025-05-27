@@ -22,7 +22,7 @@ pipeline{
                 echo "Building........"
             }
         }
-        stage("Deploy on Test"){
+        stage("Deploy on Prod"){
             steps{
                 // Deploy on Container - Plugin
                 deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcatserver', path: '', url: 'http://13.126.137.77:8081')], contextPath: '/app', war: '**/*.war'
